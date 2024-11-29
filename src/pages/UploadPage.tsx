@@ -20,7 +20,6 @@ export default function MainComponent() {
   const [backDocument, setBackDocument] = useState<File | null>(null)
   const [frontPreview, setFrontPreview] = useState<string | null>(null)
   const [backPreview, setBackPreview] = useState<string | null>(null)
-  const [fromData, setFormData] = useState()
   const [apiResponse, setApiResponse] = useState<string>("Start Performing OCR by inputting your document front and back")
   const [parsedData, setParsedData] = useState<ParsedData | null>(null)
 
@@ -60,7 +59,7 @@ export default function MainComponent() {
     try {
       const response = await SendDeatils(formData)
       if (response?.data) {
-        console.log(response.data.details, '111111111111111111111111')
+        console.log(response.data.details)
         setParsedData(response.data.details);
         setApiResponse(response.data.message);
       } else {

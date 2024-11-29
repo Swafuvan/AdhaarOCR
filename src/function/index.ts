@@ -1,6 +1,8 @@
 import axios from "axios"
+import dotenv from 'dotenv';
+dotenv.config();
 
-const baseURL = 'http://localhost:4000'
+const baseURL = process.env.NEXT_PUBLIC_URL+'';
 
 export const SendDeatils = async (adhaar:any) =>{
     try {
